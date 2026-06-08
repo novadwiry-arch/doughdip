@@ -1,0 +1,504 @@
+:root {
+    /* Defines global CSS variables used for the main color theme of the website */
+    --main-pink: #ff4b91;
+    --light-pink: #ffeef4;
+    --dark-pink: #d11a5f;
+}
+
+body {
+    /* Sets the base style for the whole webpage */
+    margin: 0; /* Removes default browser margin */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Main website font */
+    background-color: var(--light-pink); /* Page background color */
+    color: var(--main-pink); /* Default text color */
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
+/* Navigasi */
+nav ul {
+    /* Creates a horizontal navigation layout using Flexbox */
+    display: flex;
+    justify-content: flex-end; /* Align menu to the right */
+    list-style: none; /* Removes bullet points */
+    padding: 20px 50px; /* Adds spacing inside navigation */
+}
+
+nav ul li a {
+    /* Styles navigation links */
+    text-decoration: none; /* Removes underline */
+    color: var(--main-pink); /* Link color */
+    font-weight: bold; /* Makes text bold */
+    margin-left: 20px; /* Space between menu items */
+    font-size: 0.8rem; /* Smaller font size */
+}
+
+/* Hero Section */
+.hero {
+    /* Aligns hero content horizontally */
+    display: flex;
+    align-items: center; /* Vertical alignment */
+    justify-content: space-between; /* Space between text and image */
+    padding: 0 100px 50px;
+}
+
+.hero h1 {
+    /* Styles the main heading */
+    font-size: 5rem; /* Large title size */
+    line-height: 0.9; /* Tight line spacing */
+    font-style: italic; /* Italic text style */
+    margin-bottom: 10px;
+}
+
+.btn-main {
+    /* Main call-to-action button style */
+    background-color: var(--main-pink);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px; /* Rounded button */
+    font-weight: bold;
+    cursor: pointer; /* Pointer cursor on hover */
+    margin-top: 20px;
+}
+
+/* Efek Dripping (Simulasi) */
+.drip-container {
+    /* Decorative dripping shape below hero section */
+    height: 100px;
+    background-color: var(--main-pink);
+    position: relative;
+    border-radius: 0 0 50% 50% / 0 0 100% 100%;
+    margin-top: -20px;
+}
+
+/* Products */
+.products {
+    /* Product section container styling */
+    background-color: var(--light-pink);
+    padding: 50px 0;
+}
+
+.product-grid {
+    /* Arranges product cards in a row */
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between cards */
+}
+
+.card {
+    /* Product card design */
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    width: 250px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05); /* Soft shadow */
+}
+
+.btn-order {
+    /* Order button styling */
+    background-color: var(--main-pink);
+    color: white;
+    border: none;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* Build Your Own */
+.build-own {
+    /* Adds spacing around build section */
+    padding: 50px 100px;
+}
+
+.build-container {
+    /* Aligns form and image side by side */
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.build-form {
+    /* Form container styling */
+    background-color: var(--main-pink);
+    padding: 40px;
+    border-radius: 30px;
+    flex: 1;
+}
+
+.build-form h2 { 
+    /* Form title styling */
+    color: white; 
+    margin-bottom: 20px; 
+}
+
+select {
+    /* Dropdown input styling */
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border: none;
+    background: #fff;
+    color: #555;
+}
+
+.btn-submit {
+    /* Submit button styling */
+    background: white;
+    color: var(--main-pink);
+    border: none;
+    padding: 15px;
+    width: 100%;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Styling Modal */
+.modal {
+    /* Full-screen popup overlay */
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000; /* Appears above other elements */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark transparent background */
+}
+
+.modal-content {
+    /* Popup box styling */
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 30px;
+    border-radius: 20px;
+    width: 60%;
+    max-width: 600px;
+    position: relative;
+    text-align: center;
+    animation: popIn 0.3s ease; /* Smooth appearance animation */
+}
+
+/*The modal uses a scale animation called popIn,
+making the popup smoothly appear instead of suddenly showing.*/
+@keyframes popIn {
+    from { transform: scale(0.7); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.close-btn {
+    /* Close (X) button styling */
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #888;
+}
+
+.close-btn:hover { 
+    /* Changes color when hovered */
+    color: #ff4b91; 
+}
+
+.team-container {
+    /* Layout for team profiles */
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.profile-card {
+    /* Team member card styling */
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 15px;
+    flex: 1;
+}
+
+.profile-card img {
+    /* Makes profile image circular */
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ff4b91;
+    margin-bottom: 10px;
+}
+
+.profile-card .name { 
+    /* Highlights member name */
+    font-weight: bold; 
+    color: #ff4b91; 
+    margin: 5px 0; 
+}
+
+.profile-card .nim, .profile-card .college { 
+    /* Secondary information text */
+    font-size: 0.85rem; 
+    color: #666; 
+    margin: 2px 0; 
+}
+
+.contact-container {
+    /* Contact section spacing */
+    padding: 20px;
+}
+
+.contact-box p {
+    /* Contact information box */
+    background: #fff0f5;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+    border: 1px dashed #ff4b91;
+    font-size: 0.95rem;
+}
+
+.contact-box a {
+    /* Contact link style */
+    color: #ff4b91;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-box a:hover {
+    /* Underline effect on hover */
+    text-decoration: underline;
+}
+
+.input-field {
+    /* General input styling */
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border: none;
+    font-size: 1rem;
+    color: #555;
+    background-color: white;
+    box-sizing: border-box; /* Keeps size consistent */
+    display: block;
+}
+
+/* Tambahan khusus untuk select agar tingginya sama persis dengan input */
+select.input-field {
+    /* Makes dropdown height consistent with inputs */
+    height: 45px; 
+    cursor: pointer;
+}
+
+/* Fokus saat diklik */
+.input-field:focus {
+    /* Highlight effect when input is active */
+    outline: 2px solid #ff4b91;
+    background-color: #fff;
+}
+
+.card {
+    /* Fixed card layout using Flexbox */
+    width: 300px;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.card img {
+    /* Controls product image size and position */
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 15px auto;
+}
+
+#successModal{
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#successModal .modal-content{
+    background: white;
+    width: 450px;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+#successModal button{
+    background:#d63384;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+.success-popup button{
+    background:#ff5c8a;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:10px;
+    cursor:pointer;
+    margin-top:15px;
+}
+
+.admin-icon{
+    position: fixed;
+    top: 20px;
+    right: 20px;
+
+    background: white;
+    padding: 10px 15px;
+
+    border-radius: 10px;
+    text-decoration: none;
+
+    color: #ff4b91;
+    font-weight: bold;
+
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.dashboard-box{
+    display:flex;
+    gap:20px;
+    margin-bottom:30px;
+}
+
+.box{
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    width:180px;
+    text-align:center;
+
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.btn-pdf{
+    background:#dc3545;
+    color:white;
+    padding:10px 20px;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.price-box{
+    background:white;
+    color:#ff4b91;
+    padding:15px;
+    border-radius:10px;
+    margin-bottom:15px;
+    font-weight:bold;
+    text-align:center;
+    font-size:18px;
+}
+
+.cart-section{
+    background: var(--main-pink);
+    width: 80%;
+    margin: 40px auto;
+    padding: 40px;
+    border-radius: 30px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+
+    color: white;
+}
+
+.cart-section h2{
+    text-align:center;
+    color:white;
+    margin-bottom:20px;
+}
+
+.cart-item{
+    background:white;
+    color:#333;
+    padding:15px;
+    border-radius:10px;
+    margin-bottom:10px;
+}
+
+.cart-section input{
+    width:100%;
+    padding:15px;
+    margin-bottom:15px;
+    border:none;
+    border-radius:10px;
+    box-sizing:border-box;
+}
+
+.btn-delete{
+    background:#dc3545;
+    color:white;
+    border:none;
+    padding:8px 15px;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+.btn-delete:hover{
+    opacity:0.8;
+}
+
+.cart-section button{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    background:white;
+    color:var(--main-pink);
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.toast-notif{
+    position:fixed;
+    top:20px;
+    right:20px;
+
+    background:#25D366;
+    color:white;
+
+    padding:15px 20px;
+    border-radius:12px;
+
+    font-weight:bold;
+
+    opacity:0;
+    transition:.4s;
+
+    z-index:9999;
+}
+
+.toast-show{
+    opacity:1;
+}
+
+.hero-img img{
+    transition: transform 0.2s ease-out;
+    cursor:pointer;
+}
